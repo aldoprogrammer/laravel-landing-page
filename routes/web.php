@@ -14,5 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $data = ['page_name' => "Home"];
+    return view('index')->with($data);
+});
+
+
+Route::get('/about', function () {
+    $data = ['page_name' => "About"];
+    return view('about')->with($data);
+});
+
+
+Route::get('/blogs', function () {
+    $data = ['page_name' => "Blogs"];
+    return view('blogs')->with($data);
 });
